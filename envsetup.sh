@@ -489,7 +489,7 @@ function breakfast()
     CM_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/cyanogen/vendorsetup.sh vendor/cyanogen/build/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/greenromproject/vendorsetup.sh vendor/greenromproject/build/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -506,7 +506,7 @@ function breakfast()
             lunch $target
         else
             # This is probably just the CM model name
-            lunch cyanogen_$target-eng
+            lunch greenromproject_$target-eng
         fi
     fi
     return $?
