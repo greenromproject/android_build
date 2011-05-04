@@ -159,10 +159,7 @@ def LoadRecoveryFSTab(zip):
 
     p = Partition()
     p.mount_point = pieces[0]
-    if len(pieces) >= 5:
-      p.fs_type = pieces[4]
-    else:
-      p.fs_type = pieces[1]
+    p.fs_type = pieces[1]
     p.device = pieces[2]
     if len(pieces) >= 4 and pieces[3] != 'NULL':
       p.device2 = pieces[3]
@@ -790,3 +787,4 @@ def GetTypeAndDevice(mount_point, info):
     return PARTITION_TYPES[fstab[mount_point].fs_type], fstab[mount_point].device
   else:
     return None
+
