@@ -1261,11 +1261,11 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
        ifeq ($(TARGET_USES_LEOUPDATE), true)
 # USE SPECIAL UPDATE PACKAGE FOR LEO
-		./vendor/cyanogen/tools/leoupdate
+		./vendor/greenromproject/tools/leoupdate
        endif
 	$(hide) \
 		WANT_SQUASHFS=$(WANT_SQUASHFS) \
-		./vendor/cyanogen/tools/squisher
+		./vendor/greenromproject/tools/squisher
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
