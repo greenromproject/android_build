@@ -80,6 +80,7 @@ if [ -f "$RECOVERY_FSTAB" ]
 then
   cp $RECOVERY_FSTAB $DEVICE_DIR/recovery.fstab
 fi
+
 echo Done!
 echo Use the following command to set up your build environment:
 echo '  'lunch full_$DEVICE-eng

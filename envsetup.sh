@@ -506,7 +506,7 @@ function breakfast()
             lunch $target
         else
             # This is probably just the CM model name
-            lunch greenromproject_$target-eng
+            lunch cyanogen_$target-eng
         fi
     fi
     return $?
@@ -1214,23 +1214,23 @@ function cmgerrit()
 
 function mka() {
     case `uname -s` in
- 	Darwin)
- 	    make -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
- 	    ;;
- 	*)
- 	     schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
- 	    ;;
+        Darwin)
+            make -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
+            ;;
+        *)
+            schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
+            ;;
     esac
 }
 
 function reposync() {
     case `uname -s` in
- 	Darwin)
- 	    repo sync -j 10 "$@"
- 	    ;;
- 	*)
- 	    schedtool -B -n 1 -e ionice -n 1 repo sync -j 10 "$@"
- 	    ;;
+        Darwin)
+            repo sync -j 10 "$@"
+            ;;
+        *)
+            schedtool -B -n 1 -e ionice -n 1 repo sync -j 10 "$@"
+            ;;
     esac
 }
 
