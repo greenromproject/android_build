@@ -506,7 +506,7 @@ function breakfast()
             lunch $target
         else
             # This is probably just the CM model name
-            lunch cyanogen_$target-eng
+            lunch greenromproject_$target-eng
         fi
     fi
     return $?
